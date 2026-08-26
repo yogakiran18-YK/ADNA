@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADNA — Autonomous Degree Navigator Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-green: #4ade80;
+            --accent-amber: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(192, 132, 252, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            padding: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 32px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--accent-blue);
+        }
+
+        label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #0284c7);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent-purple), #9333ea);
+            color: #fff;
+            margin-top: 12px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 12px;
+        }
+
+        .tab {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .sem-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .sem-header {
+            font-weight: 700;
+            color: var(--accent-amber);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .course-chip {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-code {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .reason-box {
+            background: rgba(15, 23, 42, 0.8);
+            border-left: 3px solid var(--accent-purple);
+            padding: 12px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+
+        .reason-title {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 4px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.2);
+            color: var(--accent-blue);
+        }
+
+        .score-pill {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent-green);
+        }
+
+        .formula-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px dashed var(--accent-blue);
+            padding: 16px;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            color: #cbd5e1;
+        }
+
+        .loading-overlay {
+            color: var(--accent-blue);
+            font-weight: 600;
+            padding: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-group">
+            <div class="logo-badge">ADNA</div>
+            <div>
+                <h1>Autonomous Degree Navigator Agent</h1>
+                <div class="subtitle">Closed-Loop Multi-Agent AI Academic Strategist • Final Year B.Tech Project</div>
+            </div>
+        </div>
+        <div style="text-align: right;">
+            <div class="subtitle">System Health</div>
+            <div style="color: var(--accent-green); font-size: 0.85rem; font-weight: 600;">● Multi-Agent Engine Active</div>
+        </div>
+    </header>
+
+    <div class="grid-container">
+        <!-- Sidebar Controls -->
+        <div>
+            <div class="card">
+                <div class="card-title">Student Profile</div>
+                
+                <label>Student ID</label>
+                <input type="text" id="studentId" value="STU_DEMO_01">
+
+                <label>Target Career Role</label>
+                <select id="targetRole">
+                    <option value="AI/ML Engineer">AI/ML Engineer</option>
+                    <option value="MLOps & Cloud Engineer">MLOps & Cloud Engineer</option>
+                    <option value="Full-Stack AI Developer">Full-Stack AI Developer</option>
+                </select>
+
+                <label>Current Semester</label>
+                <select id="currentSem">
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                </select>
+
+                <label>Completed Courses (Grades)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+                  ✓ CSE101: Programming (Grade A)<br>
+                  ✓ CSE201: Data Structures (Grade S)<br>
+                  <span id="aimlCompletedTag" style="display:none; color: var(--accent-green);">✓ AIML301: Deep Learning (Grade S)</span>
+                </div>
+
+                <button class="btn btn-primary" onclick="runRoadmapRefresh()">
+                    ⚡ Run Closed-Loop Refresh
+                </button>
+
+                <button class="btn btn-accent" onclick="simulateGradeUpdate()">
+                    🔄 Simulate Semester 5 Grade S
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Market Signal Trigger</div>
+                <button class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: #fff;" onclick="triggerMarketSurge()">
+                    📈 Simulate MLOps Demand Surge
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Workspace -->
+        <div>
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(this, 'roadmap')">Semester Roadmap</div>
+                <div class="tab" onclick="switchTab(this, 'gaps')">Skill Gap Matrix</div>
+                <div class="tab" onclick="switchTab(this, 'trace')">Reason Chain Trace</div>
+                <div class="tab" onclick="switchTab(this, 'career')">Career Trajectories</div>
+            </div>
+
+            <!-- Tab 1: Roadmap -->
+            <div id="tab-roadmap">
+                <div class="card">
+                    <div class="card-title">
+                        <span>Optimization Objective Score J(X)</span>
+                        <span class="score-pill" id="objectiveScore">0.7645</span>
+                    </div>
+                    <div class="formula-card">
+                        J(X) = 0.40·GapClosure + 0.30·MarketAlignment + 0.20·FeasibilityScore - 0.10·WorkloadPenalty
+                    </div>
+
+                    <div class="roadmap-grid" id="roadmapGrid">
+                        <div class="loading-overlay">Loading Multi-Agent Roadmap...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Skill Gaps -->
+            <div id="tab-gaps" style="display: none;">
+                <div class="card">
+                    <div class="card-title">Skill Gap Analysis Matrix</div>
+                    <div class="formula-card">
+                        G(s, u) = [0.6·D(s) + 0.4·R(s)] × [1 - S_sim(E_u, E_s)] × [1 - C_mastery(u, s)]
+                    </div>
+                    <div id="skillGapList">
+                        <!-- Dynamic Skill Gap List -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Trace -->
+            <div id="tab-trace" style="display: none;">
+                <div class="card">
+                    <div class="card-title">Structured Reason Chains (Traceability Engine)</div>
+                    <div id="reasonChainList">
+                        <!-- Dynamic Reason Chains -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Career Simulator -->
+            <div id="tab-career" style="display: none;">
+                <div class="card">
+                    <div class="card-title">Hybrid Career Outcome Simulation</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                        Combines RAG LLM trajectory reasoning with an independent non-LLM statistical matrix fit score.
+                    </div>
+                    <div id="careerList">
+                        <!-- Dynamic Career Trajectories -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = "/api/v1";
+
+        async function initDemo() {
+            try {
+                // First register profile
+                await fetch(`${API_BASE}/student/profile`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        student_id: "STU_DEMO_01",
+                        name: "Demo Student",
+                        department: "CSE",
+                        current_semester: 5,
+                        target_role: document.getElementById("targetRole").value,
+                        interests: ["Deep Learning", "PyTorch"],
+                        completed_courses: [
+                            { course_code: "CSE101", semester_taken: 1, grade: "A", grade_point: 9.0 },
+                            { course_code: "CSE201", semester_taken: 2, grade: "S", grade_point: 10.0 }
+                        ]
+                    })
+                });
+
+                await runRoadmapRefresh();
+            } catch (err) {
+                console.error("Initialization Error:", err);
+            }
+        }
+
+        async function runRoadmapRefresh() {
+            const studentId = document.getElementById("studentId").value;
+            
+            try {
+                // 1. Generate Roadmap
+                const rmRes = await fetch(`${API_BASE}/roadmap/full-refresh`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ student_id: studentId })
+                });
+                const rmData = await rmRes.json();
+
+                document.getElementById("objectiveScore").innerText = rmData.objective_function_score.toFixed(4);
+
+                // Render Roadmap Grid
+                const grid = document.getElementById("roadmapGrid");
+                grid.innerHTML = "";
+                rmData.semester_plans.forEach(plan => {
+                    const card = document.createElement("div");
+                    card.className = "sem-card";
+                    let coursesHtml = plan.planned_courses.map(c => `
+                        <div class="course-chip">
+                            <span class="course-code">${c}</span>
+                            <span class="badge">4 Credits</span>
+                        </div>
+                    `).join('');
+                    if (plan.planned_courses.length === 0) {
+                        coursesHtml = `<div style="font-size:0.8rem; color:var(--text-muted);">Completed All Prerequisites</div>`;
+                    }
+
+                    card.innerHTML = `
+                        <div class="sem-header">
+                            <span>SEMESTER ${plan.semester}</span>
+                            <span>${plan.total_credits} Credits</span>
+                        </div>
+                        ${coursesHtml}
+                    `;
+                    grid.appendChild(card);
+                });
+
+                // 2. Fetch Skill Gaps
+                const gapRes = await fetch(`${API_BASE}/skills/gap-analysis/${studentId}`);
+                const gapData = await gapRes.json();
+                const gapList = document.getElementById("skillGapList");
+                gapList.innerHTML = gapData.gaps.map(g => `
+                    <div style="background: rgba(15,23,42,0.6); padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-weight:600; color:var(--text-main);">${g.skill_name} <span class="badge">${g.category}</span></div>
+                            <div style="font-size:0.8rem; color:var(--text-muted);">Demand D(s): ${g.market_demand_score.toFixed(2)} | CosSim S_sim: ${g.semantic_similarity.toFixed(2)} | Mastery C_mastery: ${g.course_mastery_factor.toFixed(2)}</div>
+                        </div>
+                        <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.1rem; color:var(--accent-amber);">
+                            G = ${g.gap_score.toFixed(4)}
+                        </div>
+                    </div>
+                `).join('');
+
+                // 3. Render Reason Chains
+                const traceList = document.getElementById("reasonChainList");
+                traceList.innerHTML = rmData.reason_chains.map(r => `
+                    <div class="reason-box">
+                        <div class="reason-title">${r.course_code} → Target Skill: ${r.target_skill_id}</div>
+                        <div>${r.explanation_prose}</div>
+                        <div style="margin-top:6px; font-size:0.75rem; color:var(--accent-blue);">Neo4j Prereq Path: [${r.prerequisite_feasibility_path.join(' → ')}]</div>
+                    </div>
+                `).join('');
+
+                // 4. Fetch Career Simulations
+                const carRes = await fetch(`${API_BASE}/career/simulate`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ student_id: studentId })
+                });
+                const carData = await carRes.json();
+                const carList = document.getElementById("careerList");
+                carList.innerHTML = carData.simulated_trajectories.map(t => `
+                    <div style="background: rgba(15,23,42,0.6); border: 1px solid var(--card-border); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                            <div style="font-weight:700; font-size:1rem; color:var(--accent-blue);">${t.title}</div>
+                            <div style="font-family:'Outfit',sans-serif; font-weight:700; color:var(--accent-green);">Composite: ${t.composite_score.toFixed(4)}</div>
+                        </div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:8px;">${t.description}</div>
+                        <div style="font-size:0.8rem; background:rgba(30,41,59,0.8); padding:8px; border-radius:6px; margin-bottom:8px;">
+                            🤖 <strong>LLM Grounded Reasoning:</strong> ${t.llm_reasoning}
+                        </div>
+                        <div style="font-size:0.8rem; color:var(--accent-purple);">
+                            📊 <strong>Independent ML Matrix Score:</strong> ${t.statistical_fit_score.toFixed(4)}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error("Refresh Error:", err);
+            }
+        }
+
+        async function simulateGradeUpdate() {
+            const studentId = document.getElementById("studentId").value;
+            document.getElementById("aimlCompletedTag").style.display = "block";
+            
+            // Update profile with AIML301 completed
+            await fetch(`${API_BASE}/student/profile`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    student_id: studentId,
+                    name: "Demo Student",
+                    department: "CSE",
+                    current_semester: 6,
+                    target_role: document.getElementById("targetRole").value,
+                    interests: ["Deep Learning", "PyTorch"],
+                    completed_courses: [
+                        { course_code: "CSE101", semester_taken: 1, grade: "A", grade_point: 9.0 },
+                        { course_code: "CSE201", semester_taken: 2, grade: "S", grade_point: 10.0 },
+                        { course_code: "AIML301", semester_taken: 5, grade: "S", grade_point: 10.0 }
+                    ]
+                })
+            });
+
+            await runRoadmapRefresh();
+        }
+
+        async function triggerMarketSurge() {
+            await fetch(`${API_BASE}/market/seed`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    postings: [
+                        { posting_id: "s1", title: "MLOps Architect", company: "CloudScale", posting_date: "2026-08-03", extracted_skills: ["skill_mlops", "skill_docker", "skill_aws"] },
+                        { posting_id: "s2", title: "DevOps Engineer", company: "InfraScale", posting_date: "2026-08-03", extracted_skills: ["skill_docker", "skill_aws", "skill_fastapi"] }
+                    ]
+                })
+            });
+
+            await runRoadmapRefresh();
+        }
+
+        function switchTab(el, tabName) {
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            if (el) {
+                el.classList.add("active");
+            }
+
+            document.getElementById("tab-roadmap").style.display = tabName === 'roadmap' ? 'block' : 'none';
+            document.getElementById("tab-gaps").style.display = tabName === 'gaps' ? 'block' : 'none';
+            document.getElementById("tab-trace").style.display = tabName === 'trace' ? 'block' : 'none';
+            document.getElementById("tab-career").style.display = tabName === 'career' ? 'block' : 'none';
+        }
+
+        window.onload = initDemo;
+    </script>
+</body>
+</html>

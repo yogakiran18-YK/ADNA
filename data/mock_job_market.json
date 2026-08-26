@@ -1,0 +1,37 @@
+[
+  {
+    "job_id": "J1",
+    "title": "Software Engineer",
+    "description": "Looking for a Software Engineer experienced in Python and SQL.",
+    "salary": 120000,
+    "posted_date": "2026-08-20T00:00:00Z"
+  },
+  {
+    "job_id": "J2",
+    "title": "Data Scientist",
+    "description": "Data Scientist with strong Python skills.",
+    "salary": 140000,
+    "posted_date": "2026-08-15T00:00:00Z"
+  },
+  {
+    "job_id": "J3",
+    "title": "Backend Developer",
+    "description": "Backend dev needed. Must know Python, SQL, and C++.",
+    "salary": 110000,
+    "posted_date": "2026-08-18T00:00:00Z"
+  },
+  {
+    "job_id": "J4",
+    "title": "Legacy Systems Maintainer",
+    "description": "Need someone to maintain our Fortran systems.",
+    "salary": 70000,
+    "posted_date": "2023-01-10T00:00:00Z"
+  },
+  {
+    "job_id": "J5",
+    "title": "Senior Fortran Dev",
+    "description": "Fortran expert required.",
+    "salary": 75000,
+    "posted_date": "2023-05-12T00:00:00Z"
+  }
+]

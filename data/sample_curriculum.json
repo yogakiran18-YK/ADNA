@@ -1,0 +1,39 @@
+[
+  {
+    "code": "CS101",
+    "title": "Introduction to Computer Science",
+    "credits": 4,
+    "semester": "Fall",
+    "description": "An introduction to computer science and programming concepts.",
+    "skills_provided": ["Python", "Algorithms"],
+    "prerequisites": []
+  },
+  {
+    "code": "CS201",
+    "title": "Data Structures",
+    "credits": 4,
+    "semester": "Spring",
+    "description": "In-depth study of data structures like lists, trees, and graphs.",
+    "skills_provided": ["C++", "Data Structures", "Algorithms"],
+    "prerequisites": [
+      {
+        "code": "CS101",
+        "type": "hard"
+      }
+    ]
+  },
+  {
+    "code": "CS301",
+    "title": "Database Systems",
+    "credits": 3,
+    "semester": "Fall",
+    "description": "Introduction to database management systems and SQL.",
+    "skills_provided": ["SQL", "Data Modeling"],
+    "prerequisites": [
+      {
+        "code": "CS201",
+        "type": "hard"
+      }
+    ]
+  }
+]
