@@ -1,8 +1,8 @@
 import json
 import logging
 import math
-from datetime import datetime, date
-from typing import List, Dict, Any, Tuple
+from datetime import datetime, date, timezone
+from typing import List, Dict, Any, Tuple, Optional
 from app.config import settings
 from app.models.schemas import JobPostingDTO, SkillDemandItem, MarketTrendsResponse
 from app.models.domain import compute_recency_decay
@@ -44,51 +44,130 @@ class MarketTrendsAgent:
                     break
         return extracted
 
-    def process_job_postings(self, postings: List[JobPostingDTO] = None, current_date_str: str = "2026-08-03") -> MarketTrendsResponse:
+    def process_job_postings(
+        self,
+        postings: Optional[List[JobPostingDTO]] = None,
+        current_date_str: Optional[str] = None,
+        as_of: Optional[str] = None
+    ) -> MarketTrendsResponse:
         """
-        Calculates demand score D(s) per skill:
+        Calculates demand score D(s) per skill with exponential recency decay:
         D(s) = sum_p [ I(s in p) * e^(-lambda * delta_t_p) ] / MaxDemand
+        where delta_t_p = max(0, (as_of - posting_date).days)
+        and lambda = settings.RECENCY_DECAY_LAMBDA (default 0.05).
+        Default as_of date policy: UTC date (datetime.now(timezone.utc)).
+        Explicit as_of and posting dates are strictly validated.
         """
-        if not postings:
-            from app.api.v1.market import DEFAULT_SEED_POSTINGS
-            postings = DEFAULT_SEED_POSTINGS
+        is_sample_data = False
+        raw_as_of = as_of or current_date_str
+        if raw_as_of is not None:
+            clean_date = raw_as_of.strip()[:10]
+            try:
+                curr_dt = datetime.strptime(clean_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+                ref_date_str = clean_date
+            except Exception as e:
+                raise ValueError(f"Invalid as_of date '{raw_as_of}'. Expected format YYYY-MM-DD.") from e
+        else:
+            curr_dt = datetime.now(timezone.utc)
+            ref_date_str = curr_dt.strftime("%Y-%m-%d")
 
-        curr_dt = datetime.strptime(current_date_str, "%Y-%m-%d")
+        if postings is None:
+            # Check SQLite for real ingested postings first
+            conn = get_sqlite_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT posting_id, title, company, posting_date, extracted_skills_json FROM market_postings")
+            rows = cursor.fetchall()
+            conn.close()
+
+            if rows:
+                postings = []
+                for r in rows:
+                    try:
+                        skills = json.loads(r["extracted_skills_json"])
+                    except Exception:
+                        skills = []
+                    postings.append(JobPostingDTO(
+                        posting_id=r["posting_id"],
+                        title=r["title"],
+                        company=r["company"],
+                        posting_date=r["posting_date"],
+                        extracted_skills=skills
+                    ))
+                is_sample_data = False
+            else:
+                from app.api.v1.market import DEFAULT_SEED_POSTINGS
+                postings = DEFAULT_SEED_POSTINGS
+                is_sample_data = True
+        elif len(postings) > 0 and all(p.posting_id.startswith("job_") for p in postings):
+            # Known default seed prefix
+            is_sample_data = True
+
+        # Handle empty postings gracefully
+        if len(postings) == 0:
+            top_skills = [
+                SkillDemandItem(
+                    skill_id=s_id,
+                    skill_name=info["name"],
+                    category=info["category"],
+                    raw_frequency=0,
+                    recency_decay_score=0.0,
+                    demand_score=0.0
+                )
+                for s_id, info in SKILL_TAXONOMY.items()
+            ]
+            return MarketTrendsResponse(
+                total_postings_analyzed=0,
+                top_skills=top_skills,
+                as_of=ref_date_str,
+                is_sample_data=is_sample_data,
+                data_source="empty"
+            )
 
         conn = get_sqlite_connection()
-        cursor = conn.cursor()
+        try:
+            cursor = conn.cursor()
 
-        skill_decay_weights: Dict[str, float] = {s_id: 0.0 for s_id in SKILL_TAXONOMY.keys()}
-        skill_frequencies: Dict[str, int] = {s_id: 0 for s_id in SKILL_TAXONOMY.keys()}
+            skill_decay_weights: Dict[str, float] = {s_id: 0.0 for s_id in SKILL_TAXONOMY.keys()}
+            skill_frequencies: Dict[str, int] = {s_id: 0 for s_id in SKILL_TAXONOMY.keys()}
 
-        for post in postings:
-            # Save raw posting to SQLite
-            cursor.execute("""
-            INSERT OR REPLACE INTO market_postings (posting_id, title, company, posting_date, extracted_skills_json)
-            VALUES (?, ?, ?, ?, ?)
-            """, (post.posting_id, post.title, post.company, post.posting_date, json.dumps(post.extracted_skills)))
+            rejected_invalid_dates = 0
+            accepted_postings_count = 0
 
-            # Calculate days since posting
-            try:
-                p_dt = datetime.strptime(post.posting_date, "%Y-%m-%d")
+            for post in postings:
+                # Validate posting date strictly
+                try:
+                    p_dt = datetime.strptime(post.posting_date.strip()[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+                except Exception:
+                    rejected_invalid_dates += 1
+                    logger.warning(f"Rejecting posting {post.posting_id}: invalid posting date '{post.posting_date}'")
+                    continue
+
+                # Save valid posting to SQLite
+                cursor.execute("""
+                INSERT OR REPLACE INTO market_postings (posting_id, title, company, posting_date, extracted_skills_json)
+                VALUES (?, ?, ?, ?, ?)
+                """, (post.posting_id, post.title, post.company, post.posting_date, json.dumps(post.extracted_skills)))
+                accepted_postings_count += 1
+
+                # Deliberate past vs future posting handling:
+                # If posting is in the past, delta_days >= 0 and recency decays exponentially.
+                # If posting is dated in the future relative to as_of, delta_days is clamped to 0 (decay weight 1.0, strictly bounded in [0, 1]).
                 delta_days = max(0, (curr_dt - p_dt).days)
-            except Exception:
-                delta_days = 0
+                recency_weight = compute_recency_decay(delta_days, decay_lambda=settings.RECENCY_DECAY_LAMBDA)
 
-            recency_weight = compute_recency_decay(delta_days, decay_lambda=settings.RECENCY_DECAY_LAMBDA)
+                # Combine explicit skills and extracted text skills
+                skills_in_post = set(post.extracted_skills)
+                extracted_additional = self.extract_skills_from_text(post.title + " " + post.company)
+                skills_in_post.update(extracted_additional)
 
-            # Combine explicit skills and extracted text skills
-            skills_in_post = set(post.extracted_skills)
-            extracted_additional = self.extract_skills_from_text(post.title + " " + post.company)
-            skills_in_post.update(extracted_additional)
+                for s_id in skills_in_post:
+                    if s_id in skill_decay_weights:
+                        skill_decay_weights[s_id] += recency_weight
+                        skill_frequencies[s_id] += 1
 
-            for s_id in skills_in_post:
-                if s_id in skill_decay_weights:
-                    skill_decay_weights[s_id] += recency_weight
-                    skill_frequencies[s_id] += 1
-
-        conn.commit()
-        conn.close()
+            conn.commit()
+        finally:
+            conn.close()
 
         # Normalize demand scores to [0, 1]
         max_decay_score = max(skill_decay_weights.values()) if skill_decay_weights.values() else 1.0
@@ -127,8 +206,22 @@ class MarketTrendsAgent:
         top_skills.sort(key=lambda x: x.demand_score, reverse=True)
 
         return MarketTrendsResponse(
-            total_postings_analyzed=len(postings),
-            top_skills=top_skills
+            total_postings_analyzed=accepted_postings_count,
+            top_skills=top_skills,
+            as_of=ref_date_str,
+            is_sample_data=is_sample_data,
+            data_source="sample_seed" if is_sample_data else "ingested_sqlite",
+            ingestion_summary={"rejected_invalid_dates": rejected_invalid_dates} if rejected_invalid_dates > 0 else None
         )
+
+    def get_current_demand_scores(self, as_of: Optional[str] = None) -> MarketTrendsResponse:
+        """
+        Reads existing ingested market postings from SQLite and computes demand scores.
+        Only falls back to seed postings if SQLite contains no postings.
+        """
+        return self.process_job_postings(postings=None, as_of=as_of)
+
+    # Backward-compatible alias
+    calculate_recency_decay = process_job_postings
 
 market_agent = MarketTrendsAgent()

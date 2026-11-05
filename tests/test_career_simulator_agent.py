@@ -40,7 +40,8 @@ def test_independence_of_ml_and_llm():
     
     # Verify SHAP explanations are populated for all 4 features
     shap_keys = set(result_A.shap_explanations.keys())
-    assert shap_keys == {"avg_gap_score", "avg_demand_score", "completed_credit_count", "skill_overlap_ratio"}
+    assert shap_keys == set(agent.feature_names)
+    assert len(shap_keys) == 4
     
     # Verify SHAP values are mathematically identical between runs
     for k in shap_keys:

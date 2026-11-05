@@ -124,6 +124,8 @@ class CurriculumAgent:
                 graph_manager.add_skill_mapping(course_code=course.code, skill_id=s_id, weight=weight)
                 skill_count += 1
 
+        graph_manager.mark_ingested()
+
         return CurriculumIngestResponse(
             status="success",
             courses_parsed=len(courses),

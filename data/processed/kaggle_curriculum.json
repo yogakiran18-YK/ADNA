@@ -1,0 +1,1602 @@
+[
+  {
+    "code": "CR-101",
+    "title": "Write A Feature Length Screenplay For Film Or Television (Michigan State University)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Michigan State University. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "Drama",
+      "Comedy",
+      "peering",
+      "screenwriting",
+      "film",
+      "Document"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-102",
+    "title": "Business Strategy: Business Model Canvas Analysis with Miro (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "Finance",
+      "business",
+      "plan",
+      "persona",
+      "(user",
+      "experience)"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-103",
+    "title": "Silicon Thin Film Solar Cells (\ufffdcole Polytechnique)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by \ufffdcole Polytechnique. Rating: 4.1. Difficulty: Advanced.",
+    "skills_provided": [
+      "chemistry",
+      "physics",
+      "Solar",
+      "Energy",
+      "film",
+      "lambda"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-104",
+    "title": "Finance for Managers (IESE Business School)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by IESE Business School. Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "accounts",
+      "receivable",
+      "dupont",
+      "analysis",
+      "analysis",
+      "Accounting"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-105",
+    "title": "Retrieve Data using Single-Table SQL Queries (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.6. Difficulty: Beginner.",
+    "skills_provided": [
+      "Data",
+      "Analysis",
+      "select",
+      "(sql)",
+      "database",
+      "management"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-106",
+    "title": "Building Test Automation Framework using Selenium and TestNG (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "maintenance",
+      "test",
+      "case",
+      "test",
+      "automation",
+      "screenshot"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-107",
+    "title": "Doing Business in China Capstone (The Chinese University of Hong Kong)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by The Chinese University of Hong Kong. Rating: 3.3. Difficulty: Advanced.",
+    "skills_provided": [
+      "marketing",
+      "plan",
+      "Planning",
+      "Marketing",
+      "consumption",
+      "(economics)"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-108",
+    "title": "Programming Languages, Part A (University of Washington)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of Washington. Rating: 4.9. Difficulty: Intermediate.",
+    "skills_provided": [
+      "inference",
+      "(programming",
+      "language)",
+      "higher-order",
+      "function",
+      "functional"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-109",
+    "title": "The Roles and Responsibilities of Nonprofit Boards of Directors within the Governance Process (The State University of New York)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by The State University of New York. Rating: 4.3. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Planning",
+      "Peer",
+      "Review",
+      "fundraising",
+      "strategic",
+      "planning"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-110",
+    "title": "Business Russian Communication. Part 3 (Saint Petersburg State University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Saint Petersburg State University. Rating: Not Calibrated. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Russian",
+      "market",
+      "(economics)",
+      "tax",
+      "exemption",
+      "cooperation"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-111",
+    "title": "Agile Projects:  Developing Tasks with Taiga (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4. Difficulty: Beginner.",
+    "skills_provided": [
+      "project",
+      "modeling",
+      "Project",
+      "Management",
+      "agile",
+      "management"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-112",
+    "title": "Esports Management Capstone Project (University of California, Irvine)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of California, Irvine. Rating: 4.4. Difficulty: Beginner.",
+    "skills_provided": [
+      "Average",
+      "Planning",
+      "Leadership",
+      "and",
+      "Management",
+      "Peer"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-113",
+    "title": "Hacking and Patching (University of Colorado System)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Colorado System. Rating: 3.4. Difficulty: Advanced.",
+    "skills_provided": [
+      "Security",
+      "Design",
+      "design",
+      "pattern",
+      "web",
+      "application"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-114",
+    "title": "Business Statistics and Analysis Capstone (Rice University)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Rice University. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "Statistical",
+      "Analysis",
+      "Microsoft",
+      "Excel",
+      "business",
+      "analytics"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-115",
+    "title": "Grab Data Fast with Vertical and Horizontal LOOKUP (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.5. Difficulty: Beginner.",
+    "skills_provided": [
+      "evaluation",
+      "software",
+      "presentation",
+      "lookup",
+      "table",
+      "Spreadsheet"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-116",
+    "title": "Global Health: An Interdisciplinary Overview (University of Geneva)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Geneva. Rating: 4.6. Difficulty: Beginner.",
+    "skills_provided": [
+      "sustainability",
+      "research",
+      "and",
+      "development",
+      "Communication",
+      "health"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-117",
+    "title": "Python Programming Essentials (Rice University)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Rice University. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "semantics",
+      "Python",
+      "Programming",
+      "coding",
+      "conventions",
+      "codeskulptor"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-118",
+    "title": "Creating Dashboards and Storytelling with Tableau (University of California, Davis)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of California, Davis. Rating: 4.6. Difficulty: Advanced.",
+    "skills_provided": [
+      "neuroscience",
+      "Data",
+      "Visualization",
+      "Storytelling",
+      "tableau",
+      "software"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-119",
+    "title": "Parallel programming (\ufffdcole Polytechnique F\ufffdd\ufffdrale de Lausanne)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by \ufffdcole Polytechnique F\ufffdd\ufffdrale de Lausanne. Rating: 4.4. Difficulty: Beginner.",
+    "skills_provided": [
+      "Data",
+      "Structures",
+      "parallel",
+      "algorithm",
+      "openfabrics",
+      "alliance"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-120",
+    "title": "Recommendation Systems with TensorFlow on GCP (Google Cloud)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Google Cloud. Rating: 4.2. Difficulty: Advanced.",
+    "skills_provided": [
+      "systems",
+      "architecture",
+      "Cloud",
+      "Computing",
+      "Google",
+      "Cloud"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-121",
+    "title": "The Changing Arctic (National Research Tomsk State University)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by National Research Tomsk State University. Rating: 4.3. Difficulty: Not calibrated.",
+    "skills_provided": [
+      "Human",
+      "Learning",
+      "Geology",
+      "curiosity",
+      "methane",
+      "Problem"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-122",
+    "title": "COVID-19 - A clinical update (University of Florida)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Florida. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "disease",
+      "mechanical",
+      "ventilation",
+      "vaccine",
+      "outbreak",
+      "epidemic"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-123",
+    "title": "How to Create Text Effects in GIMP (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "pointing",
+      "device",
+      "gesture",
+      "r&d",
+      "management",
+      "Gradient"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-124",
+    "title": "Preparing for the Google Cloud Professional Data Engineer Exam (Google Cloud)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Google Cloud. Rating: 4.5. Difficulty: Beginner.",
+    "skills_provided": [
+      "business",
+      "requirements",
+      "Cloud",
+      "Computing",
+      "Google",
+      "Cloud"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-125",
+    "title": "Multiple Regression Analysis in Public Health (Johns Hopkins University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Johns Hopkins University. Rating: 4.6. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Regression",
+      "Analysis",
+      "Regression",
+      "public",
+      "health",
+      "Confounding"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-126",
+    "title": "General Pathophysiology (Saint Petersburg State University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Saint Petersburg State University. Rating: 4. Difficulty: Intermediate.",
+    "skills_provided": [
+      "medicine",
+      "biomedical",
+      "sciences",
+      "microcirculation",
+      "physiology",
+      "endocrinology"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-127",
+    "title": "Population Health: Alternative Payment Models (Universiteit Leiden)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Universiteit Leiden. Rating: 4.9. Difficulty: Advanced.",
+    "skills_provided": [
+      "incentive",
+      "Behavioral",
+      "Economics",
+      "loss",
+      "aversion",
+      "modeling"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-128",
+    "title": "AWS Elastic Beanstalk: Build & Deploy a Node.js RESTful API (Coursera Project Network)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Coursera Project Network. Rating: 5. Difficulty: Advanced.",
+    "skills_provided": [
+      "representational",
+      "state",
+      "transfer",
+      "uniform",
+      "resource",
+      "locator"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-129",
+    "title": "Philosophy, Science and Religion: Philosophy and Religion (The University of Edinburgh)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by The University of Edinburgh. Rating: 4.6. Difficulty: Intermediate.",
+    "skills_provided": [
+      "ordered",
+      "pair",
+      "arts",
+      "and",
+      "humanities",
+      "virtue"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-130",
+    "title": "Poverty & Population: How Demographics Shape Policy (Columbia University)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Columbia University. Rating: 4.9. Difficulty: Advanced.",
+    "skills_provided": [
+      "education",
+      "Billing",
+      "political",
+      "science",
+      "oppression",
+      "Population"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-131",
+    "title": "Electrodynamics: Analysis of Electric Fields (Korea Advanced Institute of Science and Technology(KAIST))",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Korea Advanced Institute of Science and Technology(KAIST). Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "colloid",
+      "Chemical",
+      "Engineering",
+      "electronics",
+      "equipotential",
+      "high"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-132",
+    "title": "The Music of American English Pronunciation (University of California, Irvine)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of California, Irvine. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "Receiving",
+      "english",
+      "grammar",
+      "translation",
+      "data",
+      "clustering"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-133",
+    "title": "Fundamentals of Management (University of California, Irvine)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of California, Irvine. Rating: 4.5. Difficulty: Beginner.",
+    "skills_provided": [
+      "control",
+      "(management)",
+      "Planning",
+      "process",
+      "Leadership",
+      "and"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-134",
+    "title": "Advanced Speaking and Listening Project (University of California, Irvine)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of California, Irvine. Rating: 5. Difficulty: Advanced.",
+    "skills_provided": [
+      "project",
+      "rapid",
+      "serial",
+      "visual",
+      "presentation",
+      "panel"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-135",
+    "title": "Hybrid Cloud Service Mesh with Anthos (Google Cloud)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Google Cloud. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "authentication",
+      "multiplexed",
+      "transport",
+      "layer",
+      "security",
+      "service"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-136",
+    "title": "Dealing With Missing Data (University of Maryland, College Park)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Maryland, College Park. Rating: 3.5. Difficulty: Advanced.",
+    "skills_provided": [
+      "Estimation",
+      "Weighting",
+      "population",
+      "control",
+      "sample",
+      "size"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-137",
+    "title": "COBOL Programming with VSCode (IBM)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by IBM. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "ibm",
+      "cobol",
+      "numbers",
+      "(spreadsheet)",
+      "relative",
+      "change"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-138",
+    "title": "Cryptography and Hashing Overview (University of California, Irvine)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of California, Irvine. Rating: 4.7. Difficulty: Conversant.",
+    "skills_provided": [
+      "Average",
+      "Cryptography",
+      "encryption",
+      "hash",
+      "function",
+      "public-key"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-139",
+    "title": "Postman - Intro to APIs (without coding) (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.4. Difficulty: Beginner.",
+    "skills_provided": [
+      "project",
+      "mine",
+      "Marketing",
+      "news",
+      "network",
+      "news"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-140",
+    "title": "Protecting Business Innovations via Patent (The Hong Kong University of Science and Technology)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by The Hong Kong University of Science and Technology. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "service",
+      "innovation",
+      "Innovation",
+      "Patent",
+      "Law",
+      "intellectual"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-141",
+    "title": "Real-time OCR and Text Detection with Tensorflow, OpenCV and Tesseract (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 3.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "image",
+      "processing",
+      "openbsd",
+      "optical",
+      "character",
+      "recognition"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-142",
+    "title": "Global Strategy I: How The Global Economy Works (University of Illinois at Urbana-Champaign)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Illinois at Urbana-Champaign. Rating: 4.8. Difficulty: Advanced.",
+    "skills_provided": [
+      "relative",
+      "change",
+      "and",
+      "difference",
+      "economy",
+      "competitiveness"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-143",
+    "title": "Disability Inclusion in Education: Building Systems of Support (University of Cape Town)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of Cape Town. Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "social",
+      "justice",
+      "Special",
+      "Education",
+      "Learning",
+      "Disability"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-144",
+    "title": "Introduction to Cybersecurity Tools & Cyber Attacks (IBM)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by IBM. Rating: 4.3. Difficulty: Beginner.",
+    "skills_provided": [
+      "cyber-security",
+      "regulation",
+      "cyber",
+      "security",
+      "standards",
+      "forensics"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-145",
+    "title": "Introduction to Cybersecurity Tools & Cyber Attacks (IBM)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by IBM. Rating: 4.3. Difficulty: Beginner.",
+    "skills_provided": [
+      "cyber-security",
+      "regulation",
+      "cyber",
+      "security",
+      "standards",
+      "forensics"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-146",
+    "title": "Fundamentals of Funding, with Goldman Sachs 10,000 Women (Goldman Sachs)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Goldman Sachs. Rating: 4.6. Difficulty: Beginner.",
+    "skills_provided": [
+      "Communication",
+      "valuation",
+      "options",
+      "funds",
+      "online",
+      "learning"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-147",
+    "title": "Foundations of Objective-C App Development (University of California, Irvine)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of California, Irvine. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "iOS",
+      "Development",
+      "printf",
+      "format",
+      "string",
+      "xcode"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-148",
+    "title": "Programming Mobile Applications for Android Handheld Systems: Part 2 (University of Maryland, College Park)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Maryland, College Park. Rating: 4.7. Difficulty: Advanced.",
+    "skills_provided": [
+      "notification",
+      "area",
+      "interaction",
+      "technique",
+      "Android",
+      "Development"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-149",
+    "title": "Analyzing Market Attractiveness Using Creately (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "Financial",
+      "Analysis",
+      "market",
+      "(economics)",
+      "Strategy",
+      "Business"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-150",
+    "title": "Personal Leadership Development Planning and Leading High Performing Teams (Rice University)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Rice University. Rating: 4.7. Difficulty: Advanced.",
+    "skills_provided": [
+      "personal",
+      "advertisement",
+      "performance",
+      "Leadership",
+      "Development",
+      "self-assessment"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-151",
+    "title": "Integrating Scripts for Scene Interactions (Unity)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Unity. Rating: 4.8. Difficulty: Advanced.",
+    "skills_provided": [
+      "Switches",
+      "interactivity",
+      "experience",
+      "ordered",
+      "pair",
+      "video"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-152",
+    "title": "Voices of Social Change (Laureate Education)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Laureate Education. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "social",
+      "network",
+      "process",
+      "Planning",
+      "friendship",
+      "takeover"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-153",
+    "title": "Managing Asthma, Allergies, Diabetes, and Seizures in School (University of Colorado System)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Colorado System. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "health",
+      "care",
+      "first",
+      "aid",
+      "medication",
+      "asthma"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-154",
+    "title": "Global Challenges in Business Capstone (University of Illinois at Urbana-Champaign)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Illinois at Urbana-Champaign. Rating: 4.5. Difficulty: Advanced.",
+    "skills_provided": [
+      "supply",
+      "chain",
+      "global",
+      "pricing",
+      "market",
+      "segmentation"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-155",
+    "title": "Severe to Profound Intellectual Disability: Circles of Care and Education (University of Cape Town)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of Cape Town. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "lifelong",
+      "learning",
+      "process",
+      "Special",
+      "Education",
+      "intellectual"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-156",
+    "title": "Teaching Children with Visual Impairment: Creating Empowering Classrooms (University of Cape Town)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Cape Town. Rating: 4.9. Difficulty: Beginner.",
+    "skills_provided": [
+      "child",
+      "development",
+      "education",
+      "teaching",
+      "peer",
+      "support"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-157",
+    "title": "Intercultural Communication and Conflict Resolution (University of California, Irvine)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of California, Irvine. Rating: 4.3. Difficulty: Advanced.",
+    "skills_provided": [
+      "relative",
+      "change",
+      "and",
+      "difference",
+      "international",
+      "relations"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-158",
+    "title": "Prediction and Control with Function Approximation (University of Alberta)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Alberta. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "reinforcement",
+      "Gradient",
+      "gradient",
+      "descent",
+      "Reinforcement",
+      "Learning"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-159",
+    "title": "Advanced Neurobiology I (Peking University)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Peking University. Rating: 3.5. Difficulty: Beginner.",
+    "skills_provided": [
+      "action",
+      "potential",
+      "biochemistry",
+      "neuron",
+      "(software)",
+      "anatomy"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-160",
+    "title": "Foundations of Teaching for Learning: Introduction (Commonwealth Education Trust)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Commonwealth Education Trust. Rating: 4.5. Difficulty: Intermediate.",
+    "skills_provided": [
+      "psychology",
+      "Human",
+      "Learning",
+      "interpersonal",
+      "relationships",
+      "educational"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-161",
+    "title": "Change Leadership: Developing Force Field Analysis in Miro (Coursera Project Network)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Coursera Project Network. Rating: 5. Difficulty: Advanced.",
+    "skills_provided": [
+      "business",
+      "case",
+      "personal",
+      "advertisement",
+      "Mapping",
+      "Planning"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-162",
+    "title": "Lesson | Telephone Language (Georgia Institute of Technology)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Georgia Institute of Technology. Rating: 4.5. Difficulty: Not calibrated.",
+    "skills_provided": [
+      "speech",
+      "language",
+      "Marketing",
+      "law",
+      "B2B",
+      "Marketing"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-163",
+    "title": "Python Tricks and Hacks for Productivity (Coursera Project Network)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Coursera Project Network. Rating: 4.1. Difficulty: Advanced.",
+    "skills_provided": [
+      "Computer",
+      "Programming",
+      "Transpose",
+      "concision",
+      "Python",
+      "Programming"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-164",
+    "title": "Privacy in the USA (EIT Digital)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by EIT Digital. Rating: 4.6. Difficulty: Advanced.",
+    "skills_provided": [
+      "american",
+      "law",
+      "personally",
+      "identifiable",
+      "information",
+      "security"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-165",
+    "title": "Japanese for beginners 2 (Saint Petersburg State University)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Saint Petersburg State University. Rating: 4.4. Difficulty: Beginner.",
+    "skills_provided": [
+      "shopping",
+      "japanese",
+      "language",
+      "grammar",
+      "Writing",
+      "materials"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-166",
+    "title": "Introduction to Recommender Systems:  Non-Personalized and Content-Based (University of Minnesota)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Minnesota. Rating: 4.3. Difficulty: Beginner.",
+    "skills_provided": [
+      "demography",
+      "Idf",
+      "Summary",
+      "Statistics",
+      "recommender",
+      "systems"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-167",
+    "title": "Global Disease Masterclass: Global Disease Distribution (Imperial College London)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Imperial College London. Rating: 4.5. Difficulty: Beginner.",
+    "skills_provided": [
+      "global",
+      "Determinants",
+      "General",
+      "Statistics",
+      "Risk",
+      "Studentized"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-168",
+    "title": "Age of Cathedrals (Yale University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Yale University. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "architecture",
+      "art",
+      "bible",
+      "Art",
+      "History",
+      "glassing"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-169",
+    "title": "Smart Contracts (The State University of New York)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by The State University of New York. Rating: 4.6. Difficulty: Advanced.",
+    "skills_provided": [
+      "client",
+      "(computing)",
+      "BlockChain",
+      "access",
+      "modifiers",
+      "interfaces"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-170",
+    "title": "Create an FPS Weapon in Unity (Part 1 - Revolver) (Coursera Project Network)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Coursera Project Network. Rating: 5. Difficulty: Advanced.",
+    "skills_provided": [
+      "gamification",
+      "learning",
+      "project",
+      "process",
+      ".properties",
+      "hold"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-171",
+    "title": "Homeland Security and Cybersecurity Future (University of Colorado System)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of Colorado System. Rating: 4.6. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Leadership",
+      "and",
+      "Management",
+      "crime",
+      "Risk",
+      "criminology"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-172",
+    "title": "Healthcare Consumerism and Implication for Care Delivery (Northeastern University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Northeastern University. Rating: 4.5. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Healthcare",
+      "Management",
+      "emotion",
+      "insurance",
+      "Change",
+      "Management"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-173",
+    "title": "Magna Carta and its Legacies: Freedom and protest (University of London)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of London. Rating: 4.4. Difficulty: Intermediate.",
+    "skills_provided": [
+      "land",
+      "law",
+      "(programming",
+      "language)",
+      "english",
+      "language"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-174",
+    "title": "Converter Circuits (University of Colorado Boulder)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Colorado Boulder. Rating: 4.8. Difficulty: Advanced.",
+    "skills_provided": [
+      "modeling",
+      "analysis",
+      "sensitivity",
+      "index",
+      "topology",
+      "electronics"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-175",
+    "title": "Predictive Modeling and Analytics (University of Colorado Boulder)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Colorado Boulder. Rating: 3. Difficulty: Advanced.",
+    "skills_provided": [
+      "Logistic",
+      "Regression",
+      "analytics",
+      "predictive",
+      "analytics",
+      "Regression"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-176",
+    "title": "Animals and Institutions (University of Colorado Boulder)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Colorado Boulder. Rating: 5. Difficulty: Beginner.",
+    "skills_provided": [
+      "livestock",
+      "animal",
+      "veterinary",
+      "veterinary",
+      "medicine",
+      "captivity"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-177",
+    "title": "ART of the MOOC: Public Art and Pedagogy (Duke University)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Duke University. Rating: 4.6. Difficulty: Not calibrated.",
+    "skills_provided": [
+      "educational",
+      "entertainment",
+      "level",
+      "analysis",
+      "history",
+      "rock"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-178",
+    "title": "Genetics and Society: A Course for Educators (American Museum of Natural History)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by American Museum of Natural History. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "biology",
+      "genetically",
+      "modified",
+      "organisms",
+      "medicine",
+      "genetics"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-179",
+    "title": "Russian History: from Lenin to Putin (University of California, Santa Cruz)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of California, Santa Cruz. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "foreign",
+      "policy",
+      "Russian",
+      "Note",
+      "Taking",
+      "market"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-180",
+    "title": "Packet Switching Networks and Algorithms (University of Colorado System)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Colorado System. Rating: 4.6. Difficulty: Advanced.",
+    "skills_provided": [
+      "packet",
+      "switching",
+      "traffic",
+      "management",
+      "network",
+      "layer"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-181",
+    "title": "Transgender Medicine for General Medical Providers (Icahn School of Medicine at Mount Sinai)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Icahn School of Medicine at Mount Sinai. Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "therapy",
+      "Medical",
+      "Practice",
+      "behavior",
+      "therapy",
+      "Medical"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-182",
+    "title": "Epigenetic Control of Gene Expression (The University of Melbourne)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by The University of Melbourne. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "Cancer",
+      "reproductive",
+      "technology",
+      "Dna",
+      "Methylation",
+      "assisted"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-183",
+    "title": "Successful Interviewing (University of Maryland, College Park)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Maryland, College Park. Rating: 4.7. Difficulty: Advanced.",
+    "skills_provided": [
+      "Strategy",
+      "canned",
+      "response",
+      "show",
+      "me!",
+      "interview"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-184",
+    "title": "The hidden value \ufffd Lean in manufacturing and services (\ufffdcole des Ponts ParisTech)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by \ufffdcole des Ponts ParisTech. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Kaizen",
+      "Mapping",
+      "value",
+      "stream",
+      "mapping",
+      "manufacturing"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-185",
+    "title": "Mastering SQL Joins (Coursera Project Network)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Coursera Project Network. Rating: 4. Difficulty: Advanced.",
+    "skills_provided": [
+      "aggregate",
+      "function",
+      "project",
+      "employment",
+      "sorting",
+      "more"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-186",
+    "title": "Create a Database with the Modeling Tool in MySQL Workbench (Coursera Project Network)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Databases",
+      "java",
+      "annotation",
+      "integrated",
+      "development",
+      "environments"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-187",
+    "title": "Project Planning and Machine Learning (University of Colorado Boulder)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Colorado Boulder. Rating: 4.4. Difficulty: Beginner.",
+    "skills_provided": [
+      "Machine",
+      "Learning",
+      "Algorithms",
+      "Planning",
+      "internet",
+      "things"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-188",
+    "title": "Build Random Forests in R with Azure ML Studio (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "forest",
+      "Writing",
+      "Random",
+      "Forest",
+      "evaluation",
+      "Machine"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-189",
+    "title": "Introduction to CAD, CAM, and Practical CNC Machining (Autodesk)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Autodesk. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "Autodesk",
+      "CNC",
+      "Machine",
+      "physics",
+      "modeling",
+      "Chemical"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-190",
+    "title": "Problem Solving Using Computational Thinking (University of Michigan)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Michigan. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "Epidemiology",
+      "relative",
+      "change",
+      "and",
+      "difference",
+      "decomposition"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-191",
+    "title": "Surveillance Systems: Analysis, Dissemination, and Special Systems (Johns Hopkins University)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by Johns Hopkins University. Rating: 4.7. Difficulty: Intermediate.",
+    "skills_provided": [
+      "disease",
+      "disease",
+      "surveillance",
+      "Epidemiology",
+      "public",
+      "health"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-192",
+    "title": "Control physics with C# in Unity (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.8. Difficulty: Beginner.",
+    "skills_provided": [
+      "c++",
+      "Computer",
+      "Programming",
+      "sharp",
+      "(programming",
+      "language)"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-193",
+    "title": "Create Relational Database Tables Using SQLiteStudio (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "database",
+      "management",
+      "systems",
+      "Databases",
+      "web",
+      "browsers"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-194",
+    "title": "Spacecraft Dynamics Capstone: Mars Mission (University of Colorado Boulder)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by University of Colorado Boulder. Rating: 4.8. Difficulty: Advanced.",
+    "skills_provided": [
+      "simulation",
+      "daughter",
+      "autonomous",
+      "cars",
+      "tracking",
+      "numerical"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-195",
+    "title": "Guided Imagery (University of Minnesota)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of Minnesota. Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "functional",
+      "medicine",
+      "music",
+      "meditation",
+      "counseling",
+      "psychology"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-196",
+    "title": "Making Architecture (IE Business School)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by IE Business School. Rating: 4.8. Difficulty: Intermediate.",
+    "skills_provided": [
+      "Design",
+      "Analysis",
+      "modeling",
+      "Interior",
+      "Design",
+      "architecture"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-197",
+    "title": "Building Resilient Streaming Analytics Systems on GCP (Google Cloud)",
+    "credits": 4,
+    "semester": 5,
+    "description": "Offered by Google Cloud. Rating: 4.6. Difficulty: Advanced.",
+    "skills_provided": [
+      "Cloud",
+      "Computing",
+      "bigquery",
+      "bigtable",
+      "dataflow",
+      "query"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-198",
+    "title": "Types of Conflict (University of California, Irvine)",
+    "credits": 4,
+    "semester": 3,
+    "description": "Offered by University of California, Irvine. Rating: 4.3. Difficulty: Intermediate.",
+    "skills_provided": [
+      "conflict",
+      "resolution",
+      "Leadership",
+      "and",
+      "Management",
+      "Office"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-199",
+    "title": "Product Design: Designing a modern table lamp using SketchUp (Coursera Project Network)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by Coursera Project Network. Rating: 4.7. Difficulty: Beginner.",
+    "skills_provided": [
+      "sketchup",
+      "lamp",
+      "(software",
+      "bundle)",
+      "Web",
+      "Design"
+    ],
+    "prerequisites": []
+  },
+  {
+    "code": "CR-200",
+    "title": "Beyond the Sustainable Development Goals (SDGs): Addressing Sustainability and Development (University of Michigan)",
+    "credits": 3,
+    "semester": 1,
+    "description": "Offered by University of Michigan. Rating: 4.6. Difficulty: Beginner.",
+    "skills_provided": [
+      "ecotourism",
+      "the",
+      "economics",
+      "ecosystems",
+      "and",
+      "biodiversity"
+    ],
+    "prerequisites": []
+  }
+]

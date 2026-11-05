@@ -9,7 +9,8 @@ router = APIRouter(prefix="/roadmap", tags=["Planner Agent"])
 def generate_student_roadmap(request: RoadmapGenerateRequest):
     return planner_agent.generate_roadmap(
         student_id=request.student_id,
-        max_credits_per_sem=request.max_credits_per_sem
+        max_credits_per_sem=request.max_credits_per_sem,
+        target_role_id=request.target_role_id or request.target_role
     )
 
 @router.get("/{student_id}/trace", response_model=List[ReasonChainItem])
@@ -27,6 +28,7 @@ def full_pipeline_closed_loop_refresh(request: RoadmapGenerateRequest):
     """
     return planner_agent.generate_roadmap(
         student_id=request.student_id,
-        max_credits_per_sem=request.max_credits_per_sem
+        max_credits_per_sem=request.max_credits_per_sem,
+        target_role_id=request.target_role_id or request.target_role
     )
 

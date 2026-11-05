@@ -11,6 +11,7 @@ from app.api.v1.student import router as student_router
 from app.api.v1.skill_gap import router as skill_gap_router
 from app.api.v1.roadmap import router as roadmap_router
 from app.api.v1.career import router as career_router
+from api.main import app as viva_app
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -32,6 +33,7 @@ app.include_router(student_router, prefix="/api/v1")
 app.include_router(skill_gap_router, prefix="/api/v1")
 app.include_router(roadmap_router, prefix="/api/v1")
 app.include_router(career_router, prefix="/api/v1")
+app.include_router(viva_app.router)
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 if os.path.exists(static_dir):

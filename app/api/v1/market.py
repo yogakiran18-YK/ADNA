@@ -44,6 +44,53 @@ def seed_market_postings(request: Optional[MarketSeedRequest] = None):
     return market_agent.process_job_postings(postings)
 
 @router.get("/trends", response_model=MarketTrendsResponse)
-def get_market_trends():
-    # If no postings processed yet, process default seed postings
-    return market_agent.process_job_postings(DEFAULT_SEED_POSTINGS)
+def get_market_trends(as_of: Optional[str] = None):
+    try:
+        return market_agent.get_current_demand_scores(as_of=as_of)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@router.get("/postings/recent")
+def get_recent_postings(limit: int = 20):
+    import json
+    conn = get_sqlite_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT posting_id, title, company, posting_date, extracted_skills_json FROM market_postings ORDER BY posting_date DESC LIMIT ?", (limit,))
+    rows = cursor.fetchall()
+    conn.close()
+    result = []
+    for r in rows:
+        try:
+            skills = json.loads(r["extracted_skills_json"])
+        except Exception:
+            skills = []
+        result.append({
+            "posting_id": r["posting_id"],
+            "title": r["title"],
+            "company": r["company"],
+            "posting_date": r["posting_date"],
+            "extracted_skills": skills
+        })
+    return result
+
+
+@router.post("/kaggle/ingest", response_model=MarketTrendsResponse)
+def ingest_kaggle_dataset(limit: int = 150):
+    """
+    Ingests real job postings from the connected Kaggle dataset into the Market Trends Agent,
+    persisting them into SQLite and updating ChromaDB skill vector embeddings.
+    """
+    from data.kaggle_connector import ingest_kaggle_market_data
+    try:
+        return ingest_kaggle_market_data(limit=limit)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to ingest Kaggle dataset: {str(e)}")
+
+@router.get("/kaggle/status")
+def get_kaggle_dataset_status():
+    """
+    Returns the connection and verification status of all connected Kaggle datasets.
+    """
+    from data.kaggle_connector import check_dataset_status
+    return check_dataset_status()
+

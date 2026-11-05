@@ -76,11 +76,13 @@ class PlannerAgent:
         # For simplicity, we loop until gap_dict is empty or we can't take any more courses
         
         # Identify target courses (any course that teaches a skill in our gap_dict)
+        gap_dict_lower = {k.lower().strip(): v for k, v in gap_dict.items()}
         target_courses = set()
         for node in G.nodes:
             node_skills = G.nodes[node].get("skills", [])
             for s in node_skills:
-                if s in gap_dict:
+                s_clean = s.lower().strip()
+                if s_clean in gap_dict_lower or any(g in s_clean for g in gap_dict_lower):
                     target_courses.add(node)
                     
         # If target courses also have prerequisites we haven't taken, we need to take those prerequisites too.
@@ -95,6 +97,30 @@ class PlannerAgent:
         # Remove already completed courses
         all_required_courses -= completed_courses
         
+        # Fallback: If no target courses were found, incorporate role's critical enabling courses
+        if not all_required_courses:
+            try:
+                from agents.career_simulator_agent.agent import ROLE_ENABLING_SUBJECTS
+                role_key = role.role_id if role.role_id in ROLE_ENABLING_SUBJECTS else 'ROLE_DEV'
+                enablers = ROLE_ENABLING_SUBJECTS.get(role_key, ROLE_ENABLING_SUBJECTS.get('ROLE_DEV', {}))
+                crit_enablers = set(enablers.get('critical', []))
+                remaining_crit = crit_enablers - completed_courses
+                for rc in remaining_crit:
+                    if rc in G:
+                        all_required_courses.add(rc)
+                        all_required_courses.update(nx.ancestors(G, rc))
+                all_required_courses -= completed_courses
+            except Exception:
+                pass
+
+        # Second fallback: If still empty, add capstone / advanced specialization electives
+        if not all_required_courses:
+            for c in ['CS801', 'CS803', 'CS701', 'CS601', 'CS401', 'CS501', 'CS402']:
+                if c in G and c not in completed_courses:
+                    all_required_courses.add(c)
+                    all_required_courses.update(nx.ancestors(G, c))
+            all_required_courses -= completed_courses
+
         while all_required_courses:
             # Find available courses for this semester (prereqs met)
             available = []

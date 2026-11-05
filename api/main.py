@@ -1,12 +1,14 @@
 import os
 import sys
 import uuid
+import json
 from typing import List, Dict, Any
 from datetime import datetime, timezone
 
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.middleware.cors import CORSMiddleware
+from app.database.sqlite_db import get_sqlite_connection
 
 # Ensure the root of the project is in the python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -66,10 +68,32 @@ def generate_roadmap(id: str, req: RoadmapRequest, username: str = Depends(get_c
     # Enforce ID matching
     req.student.student_id = id
     
-    # Fallback to default mock jobs if none provided
-    market_jobs = req.market_jobs or [
-        {"job_id": "1", "description": "Needs Python.", "salary": 100000, "posted_date": datetime.now(timezone.utc).isoformat()}
-    ]
+    # Load real ingested jobs from SQLite if none provided
+    market_jobs = req.market_jobs
+    if not market_jobs:
+        try:
+            conn = get_sqlite_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT posting_id, title, extracted_skills_json, posted_date FROM market_postings LIMIT 50")
+            rows = cursor.fetchall()
+            conn.close()
+            if rows:
+                market_jobs = []
+                for r in rows:
+                    skills = json.loads(r["extracted_skills_json"]) if r["extracted_skills_json"] else []
+                    market_jobs.append({
+                        "job_id": r["posting_id"],
+                        "description": f"Role: {r['title']}. Skills: {', '.join(skills)}",
+                        "salary": 100000,
+                        "posted_date": r["posted_date"] or datetime.now(timezone.utc).isoformat()
+                    })
+        except Exception:
+            pass
+
+    if not market_jobs:
+        market_jobs = [
+            {"job_id": "1", "description": "Needs Python.", "salary": 100000, "posted_date": datetime.now(timezone.utc).isoformat()}
+        ]
     
     roadmap, trace = orchestrator.run_pipeline(
         curriculum_text=req.curriculum_text,
@@ -111,7 +135,34 @@ def get_career_simulation(id: str, req: StudentMockRequest, username: str = Depe
 def get_reason_chain(run_id: str, username: str = Depends(get_current_username)):
     """
     Returns the full traceable log for a given run_id.
+    Queries in-memory trace_store or SQLite roadmap_reasons.
     """
-    if run_id not in trace_store:
-        raise HTTPException(status_code=404, detail="Run ID not found")
-    return trace_store[run_id]
+    if run_id in trace_store:
+        return trace_store[run_id]
+
+    # Check SQLite roadmap_reasons for canonical /api/v1 runs
+    clean_id = run_id.replace("run_", "")
+    try:
+        conn = get_sqlite_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT rationale_json FROM roadmap_reasons WHERE roadmap_id = ?", (clean_id,))
+        rows = cursor.fetchall()
+        conn.close()
+        if rows:
+            steps = []
+            for idx, r in enumerate(rows):
+                data = json.loads(r["rationale_json"])
+                steps.append(ReasonStep(
+                    step_id=f"plan_step_{clean_id}_{idx+1}",
+                    agent_name="PlannerAgent",
+                    input_summary=f"Selected course {data.get('course_code', '')} for skill '{data.get('target_skill_id', '')}'",
+                    decision=f"Scheduled {data.get('course_code', '')}",
+                    justification=data.get("explanation_prose", ""),
+                    score_used=data.get("score_contribution", 0.0),
+                    timestamp=datetime.now(timezone.utc)
+                ))
+            return steps
+    except Exception:
+        pass
+
+    raise HTTPException(status_code=404, detail="Run ID not found")

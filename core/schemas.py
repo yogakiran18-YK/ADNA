@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 from datetime import datetime
 
 class Prerequisite(BaseModel):
@@ -42,6 +42,13 @@ class CareerSimulationResult(BaseModel):
     ml_ranking_score: float = Field(..., description="Numeric role-fit score from the ML model")
     shap_explanations: Dict[str, float] = Field(..., description="SHAP feature importances")
     llm_narrative: str = Field(..., description="Qualitative narrative from the LLM")
+    semester_readiness: Optional[Dict[str, float]] = Field(default_factory=dict, description="Semester-by-semester career readiness progression curve (Sem 1 to Sem 8)")
+    domain_competency: Optional[Dict[str, float]] = Field(default_factory=dict, description="Domain competency breakdown across foundations, core CS, and specialization")
+    role_title: Optional[str] = Field(default="", description="Title of the simulated target role")
+    match_tier: Optional[str] = Field(default="", description="Categorical fit tier according to the role score")
+    adjacent_role_scores: Optional[Dict[str, float]] = Field(default_factory=dict, description="Comparative benchmark scores across other industry roles")
+    critical_enablers_summary: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Summary of cleared and missing role-enabling subjects")
+
 
 class RoadmapPlan(BaseModel):
     student_id: str = Field(..., description="The student this roadmap is for")

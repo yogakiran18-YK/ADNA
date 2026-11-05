@@ -6,7 +6,7 @@ from app.config import settings
 
 def get_sqlite_connection():
     db_path = settings.SQLITE_DB_PATH
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=15.0)
     conn.row_factory = sqlite3.Row
     return conn
 
